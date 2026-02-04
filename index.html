@@ -1,26 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fellow Notes</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Arial', 'Segoe UI', sans-serif;
-        }
+<head>
+<meta charset="UTF-8">
+<title>FellowNotes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        div {
-            font-size: 30px;
-            font-weight: bold;
-        }
-    </style>
+<style>
+/* ---------- BASIC ---------- */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#f8fafc;
+  color:#0f172a;
+  overflow-x:hidden;
+}
+
+/* ---------- NAVBAR ---------- */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:#fff;
+  animation: navDrop 1s ease;
+}
+
+@keyframes navDrop{
+  from{opacity:0; transform:translateY(-50px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#0ea5a4;
+}
+
+nav a{
+  margin:0 15px;
+  text-decoration:none;
+  color:#64748b;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#0ea5a4;
+}
+
+.btn{
+  background:#0ea5a4;
+  color:rgb(255, 255, 255);
+  padding:10px 18px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 15px#0ea;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  text-align:center;
+  padding:90px 20px;
+}
+
+.hero h1{
+  font-size:48px;
+  animation: textUp 1.2s ease;
+}
+
+.hero h1 span{
+  color:#0ea5a4;
+}
+
+@keyframes textUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.hero p{
+  max-width:700px;
+  margin:20px auto;
+  color:#64748b;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+.hero-buttons{
+  margin-top:30px;
+}
+
+.hero-buttons button{
+  margin:10px;
+}
+
+/* ---------- STATS ---------- */
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:50px;
+}
+
+.stat{
+  animation: zoomIn 1.5s ease;
+}
+
+@keyframes zoomIn{
+  from{opacity:0; transform:scale(0.7);}
+  to{opacity:1; transform:scale(1);}
+}
+
+.stat h2{
+  font-size:32px;
+  color:#0ea5a4;
+}
+
+.stat p{
+  color:#64748b;
+}
+
+/* ---------- SEMESTER ---------- */
+.section{
+  padding:70px 20px;
+  text-align:center;
+}
+
+.section h2 span{
+  color:#0ea5a4;
+}
+
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:#fff;
+  width:230px;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 20px 30px rgba(0, 0, 0, 0.08);
+  transition:0.4s;
+  animation: slideCard 1.5s ease;
+}
+
+@keyframes slideCard{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+</style>
 </head>
+
 <body>
-    <div> We will make it happen </div> 
+
+<header>
+  <div class="logo">📘 FellowNotes</div>
+  <nav>
+    <a href="#">Semesters</a>
+    <a href="#">About</a>
+    <a href="#">Team </a>
+    <button class="btn">🔑 login</button>
+    <button class="btn"> Get Started</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Your Academic Success <br><span>Starts Here</span></h1>
+  <p>
+    Fellow Notes is your one-stop platform for organized, semester-wise BCA study materials.
+    Created by <b>Binary Minds</b>.
+  </p>
+
+  <div class="hero-buttons">
+    <button class="btn">Explore Notes →</button>
+    <button class="btn" style="background:#fff;color:#0ea5a4;border:2px solid #0ea5a4;">
+      Learn More
+    </button>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <h2>6</h2>
+      <p>Semesters</p>
+    </div>
+    <div class="stat">
+      <h2>100% </h2>
+      <p>Free Access ✔</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Browse by <span>Semester</span></h2>
+  <p style="color:#64748b;margin-top:10px;">
+    Access organized study materials for all BCA semesters.
+  </p>
+
+  <div class="cards">
+    <div class="card">Semester 1<br><small>6 Subjects</small></div>
+    <div class="card">Semester 2<br><small>6 Subjects</small></div>
+    <div class="card">Semester 3<br><small>6 Subjects</small></div>
+    <div class="card">Semester 4<br><small>6 Subjects</small></div>
+    <div class="card">Semester 5<br><small>6 Subjects</small></div>
+    <div class="card">Semester 6<br><small>6 Subjects</small></div>
+  </div>
+</section>
+
 </body>
 </html>
