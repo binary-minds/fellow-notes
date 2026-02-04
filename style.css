@@ -1,1 +1,15 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', 'Helvetica', sans-serif; /* clean modern font */
+    background-color: #f5f5f5; /* light background (optional) */
+}
+
+div {
+    font-size: 24px;
+    font-weight: 600;
+}
 
