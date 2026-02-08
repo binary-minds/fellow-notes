@@ -1,15 +1,108 @@
 body {
+    background: rgb(5, 243, 132);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+nav {
+    background: #111 ;
+    color: rgb(0, 217, 255);
+    padding: 15px 40px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #1b5f51;
+}
+
+/* Home */
+.home {
+    height: 100vh;
+    background: linear-gradient(to right, #007928, #004e92);
+    color: white;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Arial', 'Helvetica', sans-serif; /* clean modern font */
-    background-color: #f5f5f5; /* light background (optional) */
+    text-align: center;
 }
 
-div {
-    font-size: 34px;
-    font-weight: 600;
+.home h1 span {
+    color: #00ffcc;
 }
 
+.home button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: rgb(196, 150, 83);
+    background: #00ffcc;
+    color: white;
+    font-size: 16px;
+    font-weight: none;
+    cursor:pointer;
+    border-radius: 20px;
+    
+}
+
+.home button:hover {
+    background: white;
+}
+
+/* Sections */
+section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.about, .Semesters, .Team {
+    background: #f4f4f4;
+    margin-top: 10px;
+}
+
+.Semesters ul {
+    list-style: none;
+    margin-top: 20px;
+}
+  ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: none;
+}
+.Semesters ul li {
+    background: rgb(41, 179, 60);
+    color: white;
+    display: inline-block;
+    margin: 8px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
