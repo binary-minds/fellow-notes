@@ -1,6 +1,8 @@
 body {
-    background: rgb(5, 243, 132);
+    background: radial-gradient(circle at center , #2c6e48, #010102);
+    margin: 0;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -17,31 +19,10 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    color: #1b5f51;
-}
-
 /* Home */
 .home {
     height: 100vh;
-    background: linear-gradient(to right, #007928, #004e92);
-    color: white;
+    color: rgb(238, 238, 238);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,7 +38,7 @@ nav ul li a:hover {
     margin-top: 20px;
     padding: 10px 25px;
     border: rgb(196, 150, 83);
-    background: #00ffcc;
+    background: #479484;
     color: white;
     font-size: 16px;
     font-weight: none;
@@ -67,7 +48,7 @@ nav ul li a:hover {
 }
 
 .home button:hover {
-    background: white;
+    background: rgb(66, 60, 60);
 }
 
 /* Sections */
@@ -77,8 +58,9 @@ section {
 }
 
 .about, .Semesters, .Team {
-    background: #f4f4f4;
+    background: radial-gradient( circle at center, #2c6e48,#010102);
     margin-top: 10px;
+    color: white;
 }
 
 .Semesters ul {
@@ -106,3 +88,88 @@ footer {
     text-align: center;
     padding: 15px;
 }
+.about{
+    border-radius: 15px;
+    height: 300px;
+    flex: auto;
+   
+}
+.container{
+    display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+.card{
+    background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+   background: radial-gradient( circle at center, #2c6e48,#010102);
+    margin-top: 10px;
+    color: white;
+}
+.nav{
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background: #020817; /* dark blue/black */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #cbd5e1;
+}
+
+.accent {
+  color: #22c55e; /* green accent */
+  text-shadow: 0 0 8px #22c55e;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.btn {
+  background: linear-gradient(90deg, #06b6d4, #22c55e);
+  padding: 10px 18px;
+  border-radius: 12px;
+  color: white !important;
+  font-weight: 600;
+}
+.Explore{
+    color: white;
+    text-decoration: none;
+}
+.ab,.sm,.tm{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px ;
+    text-shadow: 0 0 5px #127751;
+}
+
