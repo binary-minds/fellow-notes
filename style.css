@@ -113,14 +113,17 @@ footer {
     margin-top: 10px;
     color: white;
 }
-.nav{
+nav{
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-  background: #020817; /* dark blue/black */
+  background: #0b0d13; /* dark blue/black */
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  flex-direction: row;
+        padding: 10px 15px;
+        flex-wrap: wrap;
 }
 
 .logo-container {
