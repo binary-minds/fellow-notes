@@ -2,9 +2,13 @@ html, body {
     width: 100%;
     overflow-x: hidden;
 }
+
 body {
     background: radial-gradient(circle at center , #2c6e48, #010102);
     margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 
 * {
@@ -15,17 +19,14 @@ body {
 }
 
 /* Navbar */
-nav{
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-  background: #0b0d13; /* dark blue/black */
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  flex-direction: row;
-        padding: 10px 15px;
-        flex-wrap: wrap;
+nav {
+    background: #111 ;
+    color: rgb(0, 217, 255);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 /* Home */
 .home {
@@ -56,7 +57,10 @@ nav{
 }
 
 .home button:hover {
-    background: rgb(66, 60, 60);
+    background: rgb(56, 53, 53);
+}
+.home button:active {
+    background: rgb(56, 53, 53);
 }
 
 /* Sections */
@@ -118,7 +122,7 @@ footer {
   color: white;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-   background: radial-gradient( circle at center, #2c6e48,#010102);
+   background: radial-gradient( circle at center, #2c6e48,#07070a85);
     margin-top: 10px;
     color: white;
 }
@@ -131,9 +135,10 @@ nav{
   background: #0b0d13; /* dark blue/black */
   border-bottom: 1px solid rgba(255,255,255,0.1);
   flex-direction: row;
-        padding: 10px 15px;
-        flex-wrap: wrap;
+  padding: 10px 15px;
+  flex-wrap: wrap;
 }
+
 
 .logo-container {
   display: flex;
@@ -155,6 +160,7 @@ nav{
   display: flex;
   align-items: center;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -184,4 +190,16 @@ nav{
     padding: 10px ;
     text-shadow: 0 0 5px #127751;
 }
+@media (max-width: 768px) {
 
+    
+    .nav-links {
+        gap: 1
+        10px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+}
