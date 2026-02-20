@@ -22,7 +22,7 @@ body {
 nav {
     background: #111 ;
     color: rgb(0, 217, 255);
-    padding: 15px 40px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,6 +99,7 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
+    
 }
 .about{
     border-radius: 15px;
@@ -159,8 +160,9 @@ nav{
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
   flex-wrap: wrap;
+  white-space: nowrap ;
 }
 
 .nav-links a {
@@ -191,15 +193,23 @@ nav{
     text-shadow: 0 0 5px #127751;
 }
 @media (max-width: 768px) {
-
+nav{
+    padding: 10px 15px;
+}
     
     .nav-links {
-        gap: 1
+        gap: 12px
         10px;
     }
-
+.logo-text{
+    font-size: 18px;
+}
     .logo {
         height: 40px;
+    }
+    .btn{
+        padding: 8px 14px;
+        font-size: 14px;
     }
 
 }
