@@ -57,10 +57,12 @@ nav {
 }
 
 .home button:hover {
-    background: rgb(56, 53, 53);
+    background: transparent;
+    border: 0.1px solid;
 }
 .home button:active {
-    background: rgb(56, 53, 53);
+    background: transparent;
+    border: 0.1px solid;
 }
 
 /* Sections */
@@ -74,25 +76,6 @@ section {
     margin-top: 10px;
     color: white;
 }
-
-.Semesters ul {
-    list-style: none;
-    margin-top: 20px;
-}
-  ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: none;
-}
-.Semesters ul li {
-    background: rgb(41, 179, 60);
-    color: white;
-    display: inline-block;
-    margin: 8px;
-    padding: 10px 20px;
-    border-radius: 20px;
-}
-
 /* Footer */
 footer {
     background: #111;
@@ -133,17 +116,19 @@ nav{
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-  background: #0b0d13; /* dark blue/black */
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: transparent; /* dark blue/black */
+  border-bottom: 1px solid rgb(255, 255, 255);
   flex-direction: row;
   padding: 10px 15px;
   flex-wrap: wrap;
+  border-radius: 200px;
 }
 
 
 .logo-container {
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 
 .logo-text {
@@ -190,7 +175,7 @@ nav{
 .ab,.sm,.tm{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 10px ;
-    text-shadow: 0 0 5px #127751;
+    text-shadow: 0 0 5px #1d2421;
 }
 @media (max-width: 768px) {
 nav{
@@ -211,5 +196,30 @@ nav{
         padding: 8px 14px;
         font-size: 14px;
     }
+    .logo-container {
+  display: flex;
+  align-items: center;
+  margin: auto;
+ 
+}
 
+ .nav-links a {
+    display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  white-space: wrap ;
+  gap: 15px;
+  padding: 2px;
+  flex-wrap: wrap;
+ }
+ .btn{
+    background: transparent;
+    color:#94a3b8 !important;
+ }
+ .btn:active {
+  color: white !important;
+}
+.nav-links a:active {
+  color: white;
+}
 }
