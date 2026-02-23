@@ -324,3 +324,13 @@ text-decoration: none;
 
   transform: translateY(-4px); /* slight lift effect */
 }
+footer {
+    background: #111;
+    color: white;
+    padding: 15px;
+    border-radius: 20000px;
+    padding: 4px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
