@@ -101,7 +101,7 @@ section {
 .about,
 .Semesters,
 .Team {
-  background: #111820;
+  background: transparent;
   margin: 20px auto;
   border-radius: 12px;
   max-width: 900px;
@@ -278,19 +278,21 @@ text-decoration: none;
   background-color: rgb(255, 255, 255 ,50%);
 }
 .card:hover{
-  background-color: transparent;
+  background-color: transparent !important;
 
    border-color: #1affd5;
-
   box-shadow:
     0 0 10px rgba(26, 255, 213, 0.4),
     0 0 20px rgba(26, 255, 213, 0.3),
     0 0 40px rgba(26, 255, 213, 0.15);
 
   transform: translateY(-4px); /* slight lift effect */
+  backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(80px);
+  background: transparent;
 }
 .card:active{
-  background-color: transparent;
+  background-color: transparent !important;
    border-color: #1affd5;
 
   box-shadow:
@@ -299,6 +301,9 @@ text-decoration: none;
     0 0 40px rgba(26, 255, 213, 0.15);
 
   transform: translateY(-4px); /* slight lift effect */
+   backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(80px);
+  background: transparent;
 }
 .backbtn:hover{
   background-color: transparent;
