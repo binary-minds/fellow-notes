@@ -222,53 +222,103 @@ footer {
 
 @media (max-width: 768px) {
   nav {
-    height: auto;
-    padding: 12px 16px;
-    border-radius: 26px;
+    width: calc(100% - 20px);
+    margin: 12px 10px 0;
+    padding: 12px 14px;
+    border-radius: 22px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
+    height: auto;
   }
-
-  .nav-links {
-    width: 100%;
-    display: flex;
-    gap: 12px 10px;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .logo-text {
-    font-size: 18px;
-  }
-
-  .btn {
-    padding: 8px 14px;
-    font-size: 14px;
- }
 
   .logo-container {
     margin: 0;
   }
 
+  .logo-text {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    align-items: center;
+    justify-items: center;
+  }
+
   .nav-links a {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 15px;
-    padding: 2px;
-    white-space: normal;
+    width: 100%;
+    min-height: 40px;
+    padding: 6px 8px;
+    font-size: 15px;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 14px;
   }
 
   .home {
-    padding-top: 80px;
+    min-height: auto;
+    padding: 48px 16px 28px;
+    justify-content: flex-start;
+  }
+
+  .home h1 {
+    font-size: clamp(34px, 10vw, 52px);
+    line-height: 1.1;
+    margin-bottom: 12px;
   }
 
   .home p {
     font-size: 16px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .home button {
+    margin-top: 22px;
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  section {
+    padding: 40px 16px;
   }
 
   .container {
-    padding: 10px 14px 32px;
+    padding: 8px 10px 24px;
+    gap: 14px;
   }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 18px;
+  }
+}
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+nav,
+.home,
+section,
+.container,
+.card {
+  max-width: 100%;
 }
