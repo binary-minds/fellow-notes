@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Semester Notes | Fellow Notes 2.0</title>
+  <meta name="description" content="Access organized study materials for all 6 semesters of your BCA program. Notes, syllabi, and reference materials curated by Team Binary Minds.">
+  <meta name="theme-color" content="#10b981">
+  <link rel="canonical" href="https://fellownotes.in/semester.html">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="New folder/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="New folder/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="New folder/favicon-16x16.png">
+  <link rel="manifest" href="New folder/site.webmanifest">
+
+  <!-- Styles & Scripts -->
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- ================= SITE HEADER / NAVBAR ================= -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="index.html" class="brand-link" aria-label="Fellow Notes Home">
+        <div class="brand-logo-icon">FN</div>
+        <div class="brand-text">Fellow<span>Notes</span></div>
+        <span class="version-badge">2.0</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="semester.html" class="nav-link active">Semesters</a></li>
+        <li><a href="pyq.html" class="nav-link">PYQ Bank</a></li>
+        <li><a href="tools.html" class="nav-link">Student Tools <span class="version-badge" style="font-size:9px;padding:1px 6px;margin-left:4px;">NEW</span></a></li>
+        <li><a href="join.html" class="nav-link" style="color:var(--accent-cyan); font-weight:700;"><span style="font-size:12px;">🚀</span> Join Team</a></li>
+        <li><a href="#" class="nav-link" data-open-modal="contribute">Contribute</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <span class="theme-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </span>
+        </button>
+
+        <a href="pyq.html" class="btn-secondary btn-hide-mobile">
+          <span>Question Papers</span>
+        </a>
+
+        <button class="btn-icon mobile-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="container" style="padding-top: 10px;">
+    
+    <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-secondary);">
+      <a href="index.html" style="color: var(--primary); display: inline-flex; align-items: center; gap: 4px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <span>/</span>
+      <span style="color: var(--text-primary); font-weight: 600;">Semesters</span>
+    </div>
+
+    <div class="section-head" style="margin-bottom: 24px;">
+      <span class="section-badge">Curriculum Hub</span>
+      <h1 class="section-title">All 6 BCA Semesters</h1>
+      <p class="section-desc">
+        Select your semester to access structured notes, syllabi, and reference materials.
+      </p>
+    </div>
+
+    <!-- Live Search & Year Filter -->
+    <div class="search-box-container" style="margin-bottom: 30px;">
+      <div class="search-bar-wrapper">
+        <span class="search-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </span>
+        <input type="text" id="global-search-input" class="search-input" placeholder="Type any subject (e.g. C++, Java, Python, AI, DAA)..." autocomplete="off">
+        <span class="search-shortcut">Ctrl + K</span>
+      </div>
+
+      <div class="quick-filter-pills">
+        <button type="button" class="filter-chip active" data-filter="all">All Semesters</button>
+        <button type="button" class="filter-chip" data-filter="year-1">Year 1 (Sem 1-2)</button>
+        <button type="button" class="filter-chip" data-filter="year-2">Year 2 (Sem 3-4)</button>
+        <button type="button" class="filter-chip" data-filter="year-3">Year 3 (Sem 5-6)</button>
+      </div>
+    </div>
+
+    <div id="no-search-results" style="display:none; text-align:center; padding: 40px 20px;">
+      <p style="font-size: 17px; color: var(--text-secondary); margin-bottom: 12px;">🔍 No matching subjects found.</p>
+      <button type="button" class="btn-secondary" onclick="document.getElementById('global-search-input').value=''; document.getElementById('global-search-input').dispatchEvent(new Event('input'));">Show All Semesters</button>
+    </div>
+
+    <!-- Semester Grid -->
+    <div class="semester-grid">
+
+      <!-- SEMESTER 1 -->
+      <article class="sem-card" id="sem-1" data-semester="1" data-year="1">
+        <div>
+          <div class="sem-card-top">
+            <div class="sem-number-badge">01</div>
+            <div class="sem-meta">
+              <span class="sem-year-tag">1st Year • Sem 1</span>
+              <div class="sem-subject-count">6 Subjects</div>
+            </div>
+          </div>
+          <h2 class="sem-title">Semester 1</h2>
+          <p class="sem-desc">Foundational mathematics, problem solving logic with C programming, hardware architecture, English, and knowledge systems.</p>
+          <div class="subject-pill-list">
+            <span class="subject-pill">▪ Mathematics For Computer Science</span>
+            <span class="subject-pill">▪ Problem Solving Using C</span>
+            <span class="subject-pill">▪ Computer Architecture</span>
+            <span class="subject-pill">▪ General English</span>
+            <span class="subject-pill">▪ Indian Knowledge System</span>
+            <span class="subject-pill">▪ Environmental Science</span>
+          </div>
+        </div>
+        <div class="sem-card-footer">
+          <a href="https://drive.google.com/drive/folders/15pkbkLpCbjlqBGSXfPDVh7cwQo-fo5WA?usp=drive_link" target="_blank" rel="noopener" class="btn-open-drive">
+            <span>Open Notes Drive</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <a href="pyq.html#sem-1" class="btn-pyq-link" title="View Question Papers">PYQs ↗</a>
+        </div>
+      </article>
+
+      <!-- SEMESTER 2 -->
+      <article class="sem-card" id="sem-2" data-semester="2" data-year="1">
+        <div>
+          <div class="sem-card-top">
+            <div class="sem-number-badge">02</div>
+            <div class="sem-meta">
+              <span class="sem-year-tag">1st Year • Sem 2</span>
+              <div class="sem-subject-count">6 Subjects</div>
+            </div>
+          </div>
+          <h2 class="sem-title">Semester 2</h2>
+          <p class="sem-desc">Object-oriented paradigms in C++ & Java, linear and hierarchical data structures, operating systems, and web technologies.</p>
+          <div class="subject-pill-list">
+            <span class="subject-pill">▪ Object Oriented Programming using C++</span>
+            <span class="subject-pill">▪ Data Structures</span>
+            <span class="subject-pill">▪ Operating Systems</span>
+            <span class="subject-pill">▪ Web Technologies</span>
+            <span class="subject-pill">▪ Object Oriented Programming using Java</span>
+            <span class="subject-pill">▪ Indian Constitution</span>
+          </div>
+        </div>
+        <div class="sem-card-footer">
+          <a href="https://drive.google.com/drive/folders/15Jxoimm3RmE0U6-f1eqatALwvZtkwZFe?usp=drive_link" target="_blank" rel="noopener" class="btn-open-drive">
+            <span>Open Notes Drive</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <a href="pyq.html#sem-2" class="btn-pyq-link" title="View Question Papers">PYQs ↗</a>
+        </div>
+      </article>
+
+      <!-- SEMESTER 3 -->
+      <article class="sem-card" id="sem-3" data-semester="3" data-year="2">
+        <div>
+          <div class="sem-card-top">
+            <div class="sem-number-badge">03</div>
+            <div class="sem-meta">
+              <span class="sem-year-tag">2nd Year • Sem 3</span>
+              <div class="sem-subject-count">7 Subjects</div>
+            </div>
+          </div>
+          <h2 class="sem-title">Semester 3</h2>
+          <p class="sem-desc">Probability & statistics for computing, database systems, Python programming, software engineering, and spreadsheet analytics.</p>
+          <div class="subject-pill-list">
+            <span class="subject-pill">▪ Probability and Statistics</span>
+            <span class="subject-pill">▪ Database Management System</span>
+            <span class="subject-pill">▪ Python Programming</span>
+            <span class="subject-pill">▪ Software Engineering</span>
+            <span class="subject-pill">▪ Feature Engineering</span>
+            <span class="subject-pill">▪ Basics of Data Analytics using Spreadsheet</span>
+            <span class="subject-pill">▪ Yoga and Physical fitness</span>
+          </div>
+        </div>
+        <div class="sem-card-footer">
+          <a href="https://drive.google.com/drive/folders/1XJT8f2BDq_HDIX30nQMGDVuUa9SmCW6H?usp=drive_link" target="_blank" rel="noopener" class="btn-open-drive">
+            <span>Open Notes Drive</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <a href="pyq.html#sem-3" class="btn-pyq-link" title="View Question Papers">PYQs ↗</a>
+        </div>
+      </article>
+
+      <!-- SEMESTER 4 -->
+      <article class="sem-card" id="sem-4" data-semester="4" data-year="2">
+        <div>
+          <div class="sem-card-top">
+            <div class="sem-number-badge">04</div>
+            <div class="sem-meta">
+              <span class="sem-year-tag">2nd Year • Sem 4</span>
+              <div class="sem-subject-count">7 Subjects</div>
+            </div>
+          </div>
+          <h2 class="sem-title">Semester 4</h2>
+          <p class="sem-desc">Startup ecosystems, networking topologies, design and analysis of algorithms, AI & machine learning, and data visualization.</p>
+          <div class="subject-pill-list">
+            <span class="subject-pill">▪ Entrepreneurship and Startup Ecosystem</span>
+            <span class="subject-pill">▪ Computer Networks</span>
+            <span class="subject-pill">▪ Design and Analysis of Algorithm</span>
+            <span class="subject-pill">▪ Artificial Intelligence</span>
+            <span class="subject-pill">▪ Introduction to ML</span>
+            <span class="subject-pill">▪ Data Visualization</span>
+            <span class="subject-pill">▪ Design Thinking and Innovation</span>
+          </div>
+        </div>
+        <div class="sem-card-footer">
+          <a href="https://drive.google.com/drive/folders/1lSBSZ2kJI7U_6JMUMOAwup1YcrJEs-Kq?usp=drive_link" target="_blank" rel="noopener" class="btn-open-drive">
+            <span>Open Notes Drive</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <a href="pyq.html#sem-4" class="btn-pyq-link" title="View Question Papers">PYQs ↗</a>
+        </div>
+      </article>
+
+      <!-- SEMESTER 5 (COMING SOON) -->
+      <article class="sem-card" id="sem-5" data-semester="5" data-year="3">
+        <div>
+          <div class="sem-card-top">
+            <div class="sem-number-badge">05</div>
+            <div class="sem-meta">
+              <span class="sem-year-tag">3rd Year • Sem 5</span>
+              <div class="sem-subject-count" style="color:var(--accent-amber);">Coming Soon</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+            <h2 class="sem-title" style="margin-bottom:0;">Semester 5</h2>
+            <span class="version-badge" style="background:var(--accent-amber-subtle); color:var(--accent-amber); border-color:rgba(245,158,11,0.3);">Coming Soon</span>
+          </div>
+          <p class="sem-desc">Curriculum materials and subject notes are currently in preparation by Team Binary Minds.</p>
+          <div class="subject-pill-list">
+            <span class="subject-pill" style="border-style:dashed; opacity:0.85;">⏳ Curriculum Under Update</span>
+            <span class="subject-pill" style="border-style:dashed; opacity:0.85;">⏳ Notes Coming Soon</span>
+            <span class="subject-pill" style="border-style:dashed; opacity:0.85;">⏳ Electives Indexing</span>
+          </div>
+        </div>
+        <div class="sem-card-footer">
+          <a href="https://drive.google.com/drive/folders/1GH-uarstDDd2LMirujduIIDNqfZ2XJYj?usp=drive_link" target="_blank" rel="noopener" class="btn-open-drive">
+            <span>View Drive Archive</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <a href="pyq.html#sem-5" class="btn-pyq-link" title="Sem 5 PYQ Papers">PYQs ↗</a>
+        </div>
+      </article>
+
+      <!-- SEMESTER 6 (COMING SOON) -->
+      <article class="sem-card" id="sem-6" data-semester="6" data-year="3">
+        <div>
+          <div class="sem-card-top">
+            <div class="sem-number-badge">06</div>
+            <div class="sem-meta">
+              <span class="sem-year-tag">3rd Year • Sem 6</span>
+              <div class="sem-subject-count" style="color:var(--accent-amber);">Coming Soon</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+            <h2 class="sem-title" style="margin-bottom:0;">Semester 6</h2>
+            <span class="version-badge" style="background:var(--accent-amber-subtle); color:var(--accent-amber); border-color:rgba(245,158,11,0.3);">Coming Soon</span>
+          </div>
+          <p class="sem-desc">Final semester project guidelines, capstone modules, and curriculum resources coming soon.</p>
+          <div class="subject-pill-list">
+            <span class="subject-pill" style="border-style:dashed; opacity:0.85;">⏳ Major Project Guidelines</span>
+            <span class="subject-pill" style="border-style:dashed; opacity:0.85;">⏳ Notes Coming Soon</span>
+            <span class="subject-pill" style="border-style:dashed; opacity:0.85;">⏳ Capstone Preparation</span>
+          </div>
+        </div>
+        <div class="sem-card-footer">
+          <a href="https://drive.google.com/drive/folders/1-C-KGv6wKYnUJuIHlO55G4K0oBJ1VoWx?usp=drive_link" target="_blank" rel="noopener" class="btn-open-drive">
+            <span>View Drive Archive</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <a href="pyq.html#sem-6" class="btn-pyq-link" title="Sem 6 PYQ Papers">PYQs ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ================= CONTRIBUTE MODAL ================= -->
+  <div class="modal-backdrop" id="contribute-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-window">
+      <button class="modal-close-btn" data-close-modal title="Close">✕</button>
+      <div style="display:inline-flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span style="font-size:22px;">🤝</span>
+        <h3 id="modal-title" style="font-size:21px; font-weight:800;">Contribute to Fellow Notes</h3>
+      </div>
+      <p style="font-size:13.5px; color:var(--text-secondary); margin-bottom:18px; line-height:1.6;">
+        Share high quality handwritten or typed BCA notes with Team Binary Minds to benefit fellow students.
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="mailto:Binarymind1207@gmail.com?subject=BCA%20Notes%20Contribution" class="btn-primary" style="justify-content:center;">
+          <span>Email Notes to Binarymind1207@gmail.com</span>
+        </a>
+        <button type="button" class="btn-secondary" onclick="copyEmailToClipboard('Binarymind1207@gmail.com');" style="justify-content:center;">
+          <span>Copy Contact Email</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WANNA JOIN BINARY MINDS MODAL ================= -->
+  <div class="modal-backdrop" id="join-modal" role="dialog" aria-modal="true" aria-labelledby="join-modal-title">
+    <div class="modal-window">
+      <button class="modal-close-btn" data-close-modal title="Close">✕</button>
+
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+        <span style="font-size:24px;">🚀</span>
+        <div>
+          <span class="badge-recruiting">Recruitment Open</span>
+          <h3 id="join-modal-title" style="font-size:21px; font-weight:800; margin-top:2px;">Join Team Binary Minds</h3>
+        </div>
+      </div>
+      <p style="font-size:13.5px; color:var(--text-secondary); margin-bottom:16px; line-height:1.55;">
+        Fill out your details below. Your submission is automatically forwarded to <strong>Binarymind1207@gmail.com</strong>.
+      </p>
+
+      <form id="join-binary-minds-form" class="join-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="join-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="join-name" name="name" class="form-input" placeholder="e.g. Alex Sharma" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="join-phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="join-phone" name="phone" class="form-input" placeholder="e.g. +91 9876543210" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="join-email">Email Address <span class="req">*</span></label>
+            <input type="email" id="join-email" name="email" class="form-input" placeholder="e.g. alex@example.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="join-year">College Year <span class="req">*</span></label>
+            <select id="join-year" name="year" class="form-select" required>
+              <option value="1st Year (BCA)">1st Year (BCA)</option>
+              <option value="2nd Year (BCA)">2nd Year (BCA)</option>
+              <option value="3rd Year (BCA)">3rd Year (BCA)</option>
+              <option value="4th Year (BCA)">4th Year (BCA)</option>
+              <option value="Other Degree / Batch">Other Degree / Batch</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="join-city">City <span class="req">*</span></label>
+          <input type="text" id="join-city" name="city" class="form-input" placeholder="e.g. Pune, Delhi, Bengaluru, Mumbai" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="join-why">Why do you wanna join Binary Minds? <span class="req">*</span></label>
+          <textarea id="join-why" name="why_join" class="form-textarea" placeholder="Tell us about yourself, your skills, and what you want to build with us..." required></textarea>
+        </div>
+
+        <button type="submit" id="join-submit-btn" class="btn-join-submit">
+          <span>Submit Application</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+
+        <p style="font-size:11.5px; color:var(--text-muted); text-align:center; margin-top:2px;">
+          Directly sent to <strong>Binarymind1207@gmail.com</strong>.
+        </p>
+      </form>
+
+      <div id="join-success-card" class="join-success-card">
+        <div class="join-success-icon">✓</div>
+        <h4 style="font-size:20px; font-weight:800; margin-bottom:6px;">Application Received!</h4>
+        <p style="font-size:14px; color:var(--text-secondary); margin-bottom:18px; line-height:1.6;">
+          Thank you, <strong id="applicant-name-display" style="color:var(--primary);"></strong>! Your details have been delivered to Team Binary Minds. We'll reach out to you soon!
+        </p>
+        <button type="button" class="btn-secondary" data-close-modal style="margin: 0 auto;">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-link">
+          <div class="brand-logo-icon">FN</div>
+          <div class="brand-text">Fellow<span>Notes</span></div>
+          <span class="version-badge">2.0</span>
+        </div>
+        <p>Curated semester notes & syllabus materials for BCA students. Policy compliant and always free.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="semester.html">Semesters</a></li>
+          <li><a href="pyq.html">PYQ Bank</a></li>
+          <li><a href="tools.html">Student Tools</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Binary Minds</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:Binarymind1207@gmail.com">Contact Us</a></li>
+          <li><a href="join.html" style="color:var(--primary); font-weight:700;">🚀 Wanna Join Binary Minds?</a></li>
+          <li><a href="#" data-open-modal="contribute">Submit Notes</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 <strong>Fellow Notes 2.0</strong> • Built with ❤ by <strong>Team Binary Minds</strong>.</div>
+      <div>Designed for BCA Students</div>
+    </div>
+  </footer>
+
+</body>
+</html>

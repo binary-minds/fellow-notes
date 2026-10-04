@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Join Team Binary Minds | Fellow Notes 2.0</title>
+  <meta name="description" content="Apply to join Team Binary Minds, the student engineering team behind Fellow Notes 2.0. Work on web development, UI design, tech writing, and community outreach.">
+  <meta name="theme-color" content="#10b981">
+  <link rel="canonical" href="https://fellownotes.in/join.html">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="New folder/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="New folder/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="New folder/favicon-16x16.png">
+  <link rel="manifest" href="New folder/site.webmanifest">
+
+  <!-- Styles & Scripts -->
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- ================= SITE HEADER / NAVBAR ================= -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="index.html" class="brand-link" aria-label="Fellow Notes Home">
+        <div class="brand-logo-icon">FN</div>
+        <div class="brand-text">Fellow<span>Notes</span></div>
+        <span class="version-badge">2.0</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="semester.html" class="nav-link">Semesters</a></li>
+        <li><a href="pyq.html" class="nav-link">PYQ Bank</a></li>
+        <li><a href="tools.html" class="nav-link">Student Tools</a></li>
+        <li><a href="join.html" class="nav-link active" style="color:var(--accent-cyan); font-weight:700;"><span style="font-size:12px;">🚀</span> Join Team</a></li>
+        <li><a href="#" class="nav-link" data-open-modal="contribute">Contribute</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <span class="theme-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </span>
+        </button>
+
+        <a href="index.html" class="btn-secondary btn-hide-mobile">
+          <span>Back to Home</span>
+        </a>
+
+        <button class="btn-icon mobile-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="container" style="padding-top: 10px; padding-bottom: 60px;">
+    
+    <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-secondary);">
+      <a href="index.html" style="color: var(--primary); display: inline-flex; align-items: center; gap: 4px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <span>/</span>
+      <span style="color: var(--text-primary); font-weight: 600;">Join Team Binary Minds</span>
+    </div>
+
+    <!-- Application Form Card -->
+    <div class="join-section-card">
+      <div class="join-header-text">
+        <span class="badge-recruiting">Now Recruiting</span>
+        <h1 style="font-size: clamp(26px, 4.5vw, 36px); font-weight: 800; margin: 12px 0 8px;">
+          Wanna Join Team Binary Minds?
+        </h1>
+        <p style="font-size: 15px; color: var(--text-secondary); max-width: 650px; margin: 0 auto 28px; line-height: 1.6;">
+          We are a team of students building tools, curating study materials, and engineering real-world projects together. Fill out this form and your application will be sent directly to <strong>Binarymind1207@gmail.com</strong>.
+        </p>
+      </div>
+
+      <!-- Application Form -->
+      <form id="join-binary-minds-form" class="join-form-wrapper" action="https://formsubmit.co/Binarymind1207@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Binary Minds Team Application">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="join-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="join-name" name="name" class="form-input" placeholder="e.g. Alex Sharma" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="join-phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="join-phone" name="phone" class="form-input" placeholder="e.g. +91 9876543210" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="join-email">Email Address <span class="req">*</span></label>
+            <input type="email" id="join-email" name="email" class="form-input" placeholder="e.g. alex@gmail.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="join-year">College Year <span class="req">*</span></label>
+            <select id="join-year" name="year" class="form-select" required>
+              <option value="1st Year (BCA)">1st Year (BCA)</option>
+              <option value="2nd Year (BCA)">2nd Year (BCA)</option>
+              <option value="3rd Year (BCA)">3rd Year (BCA)</option>
+              <option value="4th Year (BCA)">4th Year (BCA)</option>
+              <option value="Other Degree / Batch">Other Degree / Batch</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="join-city">City <span class="req">*</span></label>
+          <input type="text" id="join-city" name="city" class="form-input" placeholder="e.g. Pune, Delhi, Bengaluru, Mumbai" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="join-why">Why do you wanna join Binary Minds? <span class="req">*</span></label>
+          <textarea id="join-why" name="why_join" class="form-textarea" placeholder="Tell us about yourself, your skills (frontend, design, note curation, programming), and why you'd like to collaborate with us..." required></textarea>
+        </div>
+
+        <button type="submit" id="join-submit-btn" class="btn-join-submit" style="font-size: 16px; padding: 14px 24px;">
+          <span>Submit Application to Binary Minds</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+
+        <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 4px;">
+          Submissions are received at <strong>Binarymind1207@gmail.com</strong>.
+        </p>
+      </form>
+
+      <!-- Success Screen -->
+      <div id="join-success-card" class="join-success-card">
+        <div class="join-success-icon">✓</div>
+        <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">Application Received!</h3>
+        <p style="font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">
+          Thank you, <strong id="applicant-name-display" style="color: var(--primary);"></strong>! Your application details have been delivered to Team Binary Minds. We'll reach out to you shortly!
+        </p>
+        <a href="index.html" class="btn-primary" style="margin: 0 auto; display: inline-flex;">Back to Home</a>
+      </div>
+    </div>
+
+    <!-- What You Get by Joining -->
+    <div style="max-width: 840px; margin: 40px auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px;">
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px;">
+        <div style="font-size: 24px; margin-bottom: 10px;">💻</div>
+        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Real-World Coding</h3>
+        <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;">
+          Collaborate on actual web apps, design systems, and GitHub repositories that real students use daily.
+        </p>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px;">
+        <div style="font-size: 24px; margin-bottom: 10px;">🚀</div>
+        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Resume & Portfolio</h3>
+        <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;">
+          Get your contributions recognized, credited on the Fellow Notes platform, and showcased on your portfolio.
+        </p>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px;">
+        <div style="font-size: 24px; margin-bottom: 10px;">🤝</div>
+        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Peer Network</h3>
+        <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;">
+          Learn with like-minded BCA peers, share study materials, and work on hackathons together.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= CONTRIBUTE MODAL ================= -->
+  <div class="modal-backdrop" id="contribute-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-window">
+      <button class="modal-close-btn" data-close-modal title="Close">✕</button>
+      <div style="display:inline-flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span style="font-size:22px;">🤝</span>
+        <h3 id="modal-title" style="font-size:21px; font-weight:800;">Contribute to Fellow Notes</h3>
+      </div>
+      <p style="font-size:13.5px; color:var(--text-secondary); margin-bottom:18px; line-height:1.6;">
+        Share notes, previous year papers, or syllabus summaries with Team Binary Minds.
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="mailto:Binarymind1207@gmail.com?subject=Fellow%20Notes%20Contribution" class="btn-primary" style="justify-content:center;">
+          <span>Email Notes to Binarymind1207@gmail.com</span>
+        </a>
+        <button type="button" class="btn-secondary" onclick="copyEmailToClipboard('Binarymind1207@gmail.com');" style="justify-content:center;">
+          <span>Copy Contact Email</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-link">
+          <div class="brand-logo-icon">FN</div>
+          <div class="brand-text">Fellow<span>Notes</span></div>
+          <span class="version-badge">2.0</span>
+        </div>
+        <p>Fellow Notes 2.0 is built by Team Binary Minds to empower BCA students. 100% Free.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="semester.html">Semesters</a></li>
+          <li><a href="pyq.html">PYQ Bank</a></li>
+          <li><a href="tools.html">Student Tools</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Binary Minds</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:Binarymind1207@gmail.com">Contact Us</a></li>
+          <li><a href="join.html" style="color:var(--primary); font-weight:700;">🚀 Wanna Join Binary Minds?</a></li>
+          <li><a href="#" data-open-modal="contribute">Submit Notes</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 <strong>Fellow Notes 2.0</strong> • Built with ❤ by <strong>Team Binary Minds</strong>.</div>
+      <div>Designed for BCA Students</div>
+    </div>
+  </footer>
+
+</body>
+</html>
