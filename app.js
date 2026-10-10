@@ -117,6 +117,8 @@ function initLiveSearch() {
   const searchInput = document.getElementById('global-search-input');
   if (!searchInput) return;
 
+  const semGroups = document.querySelectorAll('.sem-section-group');
+  const subjectCards = document.querySelectorAll('.subject-card');
   const semCards = document.querySelectorAll('.sem-card');
   const noResultsMsg = document.getElementById('no-search-results');
 
@@ -124,6 +126,53 @@ function initLiveSearch() {
     const query = searchInput.value.trim().toLowerCase();
     let matchesCount = 0;
 
+    // Handle specific subject cards & semester groups
+    if (semGroups.length > 0 && subjectCards.length > 0) {
+      if (!query) {
+        semGroups.forEach(group => group.style.display = '');
+        subjectCards.forEach(card => {
+          card.style.display = '';
+          card.classList.remove('highlight');
+        });
+        if (noResultsMsg) noResultsMsg.style.display = 'none';
+        return;
+      }
+
+      semGroups.forEach(group => {
+        const groupTitle = group.querySelector('.sem-heading-box')?.textContent.toLowerCase() || '';
+        const groupCards = group.querySelectorAll('.subject-card');
+        let groupHasMatch = false;
+
+        groupCards.forEach(card => {
+          const cardTitle = card.querySelector('.subject-card-title')?.textContent.toLowerCase() || '';
+          const cardDesc = card.querySelector('.subject-card-desc')?.textContent.toLowerCase() || '';
+          const cardBadge = card.querySelector('.subject-tag-badge')?.textContent.toLowerCase() || '';
+
+          if (cardTitle.includes(query) || cardDesc.includes(query) || cardBadge.includes(query) || groupTitle.includes(query)) {
+            card.style.display = '';
+            card.classList.add('highlight');
+            groupHasMatch = true;
+            matchesCount++;
+          } else {
+            card.style.display = 'none';
+            card.classList.remove('highlight');
+          }
+        });
+
+        if (groupHasMatch) {
+          group.style.display = '';
+        } else {
+          group.style.display = 'none';
+        }
+      });
+
+      if (noResultsMsg) {
+        noResultsMsg.style.display = (matchesCount === 0 && query !== '') ? 'block' : 'none';
+      }
+      return;
+    }
+
+    // Fallback for legacy .sem-card (e.g. pyq.html)
     semCards.forEach(card => {
       const title = card.querySelector('.sem-title')?.textContent.toLowerCase() || '';
       const desc = card.querySelector('.sem-desc')?.textContent.toLowerCase() || '';
@@ -170,9 +219,10 @@ function initLiveSearch() {
 
 function initFilterChips() {
   const filterChips = document.querySelectorAll('.filter-chip');
+  const semGroups = document.querySelectorAll('.sem-section-group');
   const semCards = document.querySelectorAll('.sem-card');
 
-  if (!filterChips.length || !semCards.length) return;
+  if (!filterChips.length) return;
 
   filterChips.forEach(chip => {
     chip.addEventListener('click', () => {
@@ -181,20 +231,60 @@ function initFilterChips() {
 
       const filterVal = chip.getAttribute('data-filter');
 
-      semCards.forEach(card => {
-        const semNum = card.getAttribute('data-semester');
-        const yearNum = card.getAttribute('data-year');
+      // Clear search when switching filter chip for smooth experience
+      const searchInput = document.getElementById('global-search-input');
+      if (searchInput && searchInput.value) {
+        searchInput.value = '';
+        document.querySelectorAll('.subject-card').forEach(c => {
+          c.style.display = '';
+          c.classList.remove('highlight');
+        });
+        const noResultsMsg = document.getElementById('no-search-results');
+        if (noResultsMsg) noResultsMsg.style.display = 'none';
+      }
 
-        if (filterVal === 'all') {
-          card.style.display = '';
-        } else if (filterVal.startsWith('year-') && yearNum === filterVal.replace('year-', '')) {
-          card.style.display = '';
-        } else if (filterVal.startsWith('sem-') && semNum === filterVal.replace('sem-', '')) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      // Filter semester groups with subject cards
+      if (semGroups.length > 0) {
+        semGroups.forEach(group => {
+          const semNum = group.getAttribute('data-semester');
+          const yearNum = group.getAttribute('data-year');
+
+          // Reset all subjects inside to visible
+          group.querySelectorAll('.subject-card').forEach(c => c.style.display = '');
+
+          if (filterVal === 'all') {
+            group.style.display = '';
+          } else if (filterVal === 'sem-5-6' && (semNum === '5' || semNum === '6')) {
+            group.style.display = '';
+          } else if (filterVal.startsWith('year-') && yearNum === filterVal.replace('year-', '')) {
+            group.style.display = '';
+          } else if (filterVal.startsWith('sem-') && semNum === filterVal.replace('sem-', '')) {
+            group.style.display = '';
+          } else {
+            group.style.display = 'none';
+          }
+        });
+      }
+
+      // Filter legacy .sem-card (e.g. pyq.html)
+      if (semCards.length > 0) {
+        semCards.forEach(card => {
+          const semNum = card.getAttribute('data-semester');
+          const yearNum = card.getAttribute('data-year');
+
+          if (filterVal === 'all') {
+            card.style.display = '';
+          } else if (filterVal === 'sem-5-6' && (semNum === '5' || semNum === '6')) {
+            card.style.display = '';
+          } else if (filterVal.startsWith('year-') && yearNum === filterVal.replace('year-', '')) {
+            card.style.display = '';
+          } else if (filterVal.startsWith('sem-') && semNum === filterVal.replace('sem-', '')) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
     });
   });
 }
